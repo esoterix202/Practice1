@@ -1,0 +1,17 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+
+  color: $color-black;
+  background-color: $color-white;
+}
+
+.site {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $color-grey;
+}

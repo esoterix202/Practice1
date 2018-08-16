@@ -1,0 +1,40 @@
+.footer {
+    display: block;
+    width: 100%;
+    background-color: $color-almostblack;
+}
+
+.footer-wrapper {
+    width: 81.667%;
+    margin: 0 auto;
+    padding: 50px 20px 50px 20px;
+    @include clearfix;
+}
+
+.footer-wrapper>ul {
+    display: inline-block;
+    width: 48.939%;
+    @include clearfix;
+}
+
+.footer-wrapper>ul>li {
+    float: left;
+    list-style: none;
+    &:not(:last-child) {
+        margin-right: 3px;
+    }
+}
+
+.footer-wrapper>ul>li>a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: $color-grey;
+}
+
+.footer-wrapper>p {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    color: $color-grey;
+}

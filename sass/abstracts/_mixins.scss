@@ -1,0 +1,52 @@
+@mixin clearfix {
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} //MEDIA QUERIE MANAGER
+// 0 - 600px: phone
+// 600px - 900px tablet portrait
+// 900px - 1200px tablet landscape
+// 1200px - 1800px desktop - default styles - desktop first aproach
+// 1800px - ++ big desktop
+// $breakpoint arguements:
+// - phone
+// - tab-port
+// - tab-land
+// - big-desktop
+//ORDER: Base + typography > general layout + grid > page layout > components
+//ems units are the best options for the media queries because of accesibility, if user changes the font-size inside the browser
+//1em is 16px
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 320px) {
+            @content;
+        } //600px / 16px
+    }
+    @if $breakpoint==tab-port {
+        @media (max-width: 640px) {
+            @content;
+        } //900px / 16px
+    }
+    @if $breakpoint==tab-land {
+        @media (max-width: 768px) {
+            @content;
+        } //1200px / 16px
+    }
+    @if $breakpoint==laptop-desktop {
+        @media (min-width: 1024px) {
+            @content;
+        } //1800px / 16px
+    }
+}

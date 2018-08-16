@@ -1,0 +1,241 @@
+//general slider style >> slick.scss & slick-theme.scss
+.slider {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slider.slick-initialized {
+    visibility: visible;
+    opacity: 1;
+}
+
+.slider .slider__slide {
+    display: none;
+}
+
+.slider .slider__slide:first-child {
+    display: block;
+    visibility: hidden;
+}
+
+.slider.slick-initialized .slider__slide {
+    display: block;
+    visibility: visible !important;
+}
+
+.slider__slide {
+    position: relative;
+}
+
+.slider__overlay {
+    max-width: 51.667%;
+    position: absolute;
+    bottom: 30px;
+    left: 130px;
+    padding: 8px 15px 15px 15px;
+    text-align: left;
+    color: $color-white;
+    background-color: rgba($color-black, .6);
+}
+
+.slider__overlay>h1 {
+    margin-bottom: 10px;
+    font-size: 44px;
+    font-weight: 300;
+}
+
+.slider__overlay>p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.slider__read-more>a {
+    font-size: 18px;
+    color: $color-white;
+    transition: border-bottom .5s;
+    &:hover {
+        border-bottom: 1px solid $color-white;
+    }
+}
+
+.text {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: $color-white;
+}
+
+.text__wrapper {
+    width: 81.667%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: $color-white;
+    @include clearfix;
+}
+
+.text__article {
+    float: left;
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+.text__article>h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $color-orange;
+    font-size: 24px;
+    font-weight: 300;
+    color: $color-orange;
+}
+
+.text__article>p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: $color-darkgrey;
+}
+
+.text__article>span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: $color-midgrey;
+}
+
+.text__article>a {
+    border-bottom: 1px solid transparent;
+    font-size: 16px;
+    color: $color-orange;
+    transition: all .5s;
+    &:hover {
+        border-bottom: 1px solid $color-orange;
+    }
+}
+
+.text__article>hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: $color-orange;
+    background-color: $color-orange;
+    border-width: .3px;
+}
+
+.text__article>form>input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: $color-grey;
+    transition: all .5s;
+    &:focus {
+        outline: none;
+        border: 2px solid $color-orange;
+    }
+}
+
+.text__article>form>button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-orange;
+    transition: all .5s;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        box-shadow: 0 0 10px 0 rgba($color-grey, .1);
+        cursor: pointer;
+    }
+    &:active {
+        box-shadow: 0 0 10px 0 rgba($color-midgrey, .1);
+    }
+}
+
+.galery {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: $color-grey;
+}
+
+.galery__wrapper {
+    width: 81.667%;
+    margin: 0 auto;
+    padding: 50px 20px;
+    @include clearfix;
+}
+
+.galery__item {
+    position: relative;
+    float: left;
+    min-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    transition: all .5s;
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+    &:hover {
+        box-shadow: 0 0 10px 0 rgba($color-darkgrey, .01);
+    }
+    &:hover>.galery__overlay,
+    &:hover>.galery__overlay-textbox {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.galery__item.one {
+    background-image: url('../img/bottom1.png');
+}
+
+.galery__item.two {
+    background-image: url('../img/bottom2.png');
+}
+
+.galery__item.three {
+    background-image: url('../img/bottom3.png');
+}
+
+.galery__overlay {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: $color-black;
+    opacity: .4;
+    transition: all .5s;
+}
+
+.galery__overlay-textbox {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba($color-black, .6);
+    transition: all .5s;
+}
+
+.galery__overlay-textbox>p {
+    font-size: 20px;
+    font-weight: 300;
+    color: $color-white;
+}
